@@ -1,0 +1,17 @@
+if SHIELD_MINE_LEFT
+
+config ZMK_MINE
+    default "mine"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+
+if SHIELD_MINE_LEFT || SHIELD_MINE_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif

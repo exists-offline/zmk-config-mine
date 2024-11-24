@@ -1,0 +1,5 @@
+config SHIELD_MINE_LEFT
+    def_bool $(shields_list_contains,mine_left)
+
+config SHIELD_MINE_RIGHT
+    def_bool $(shields_list_contains,mine_right)
