@@ -11,17 +11,17 @@
                         bindings = 
                             //  tab     Q       W       E       R       T               Z       U       I       O       P       Ü
                             
-                            //  shift   A       S       D       F       G               H       J       K       L       Ö       Ä     
+                            //  shift   A       S       D       F       G               H       J       K       L       Ö       Ä(shift)     
                             
                             //  ctrl    Y(alt)  X       C       V       B               N       M       ,       .       -(alt)  ctrl
                             
                             //                          win     ret(1)  space           bspc    del(2)   altgr
                             
                         <
-                                &kp TAB &kp Q   &kp W   &kp E   &kp R   &kp T           &kp DE_Z   &kp U   &kp I   &kp O   &kp P   &kp DE_U_UMLAUT
-                                &kp LSHIFT &kp A  &kp S &kp D   &kp F   &kp G           &kp H      &kp J   &kp K   &kp L   &kp DE_O_UMLAUT   &kp DE_A_UMLAUT
-                                &kp LCTRL &kp DE_Y &kp X &kp C  &kp V   &kp B           &kp N      &kp M   &kp DE_COMMA &kp DE_PERIOD &kp DE_MINUS  &kp RCTRL
-                                                   &kp LGUI &kp RET &kp SPACE           &kp BSPC &kp DEL &kp RALT
+                                &kp TAB &kp Q   &kp W   &kp DE_E   &kp R   &kp T           &kp DE_Z   &kp U   &kp I   &kp O   &kp P   &kp DE_U_UMLAUT
+                                &kp LSHIFT &kp A  &kp S &kp D   &kp F   &kp G           &kp H      &kp J   &kp K   &kp L   &kp DE_O_UMLAUT   &mt RSHIFT DE_A_UMLAUT
+                                &kp LCTRL &mt LALT DE_Y &kp X &kp C  &kp V   &kp B           &kp N      &kp M   &kp DE_COMMA &kp DE_PERIOD &kp DE_MINUS  &kp RCTRL
+                                                   &kp LGUI &lt 1 RET &kp SPACE           &kp BSPC &lt 2 DEL &kp RALT
                         >;
                 };
 
@@ -31,15 +31,15 @@
                             
                             //  ^^      1       2       3       4       5               6       7       8       9       0       f12
                             
-                            //  _       _       bt_c    bt_n    bt_p    _               _       _       _       _       _       _
+                            //  _       _       bt_c    bt_n    bt_p    _               _       +       -       *       /       _
                             
                             //                          _       _       _               _       _       _
 
                         <
-                                &kp TAB &kp Q   &kp W   &kp E   &kp R   &kp T           &kp DE_Z   &kp U   &kp I   &kp O   &kp P   &kp DE_U_UMLAUT
-                                &kp LSHIFT &kp A  &kp S &kp D   &kp F   &kp G           &kp H      &kp J   &kp K   &kp L   &kp DE_O_UMLAUT   &kp DE_A_UMLAUT
-                                &kp LCTRL &kp DE_Y &kp X &kp C  &kp V   &kp B           &kp N      &kp M   &kp DE_COMMA &kp DE_PERIOD &kp DE_MINUS  &kp RCTRL
-                                                   &kp LGUI &kp RET &kp SPACE           &kp BSPC &kp DEL &kp RALT
+                                &kp ESC &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                          &kp F6     &kp F7  &kp F8   &kp F9  &kp F10  &kp F11
+                                &kp DE_CARET &kp DE_N1  &kp DE_N2 &kp DE_N3 &kp DE_N4 &kp DE_N5         &kp DE_N6 &kp DE_N7 &kp DE_N8 &kp DE_N9 &kp DE_N0 &kp F12
+                                &trans &trans &bt BT_CLR &bt BT_PRV &bt BT_NXT &trans                   &trans &kp DE_PLUS &kp DE_MINUS &kp DE_STAR &kp DE_SLASH  &trans
+                                                   &trans &trans &trans                                 &trans &trans &trans
                         >;
                 };
 
@@ -55,10 +55,10 @@
 
 
                         <
-                                &kp TAB &kp Q   &kp W   &kp E   &kp R   &kp T           &kp DE_Z   &kp U   &kp I   &kp O   &kp P   &kp DE_U_UMLAUT
-                                &kp LSHIFT &kp A  &kp S &kp D   &kp F   &kp G           &kp H      &kp J   &kp K   &kp L   &kp DE_O_UMLAUT   &kp DE_A_UMLAUT
-                                &kp LCTRL &kp DE_Y &kp X &kp C  &kp V   &kp B           &kp N      &kp M   &kp DE_COMMA &kp DE_PERIOD &kp DE_MINUS  &kp RCTRL
-                                                   &kp LGUI &kp RET &kp SPACE           &kp BSPC &kp DEL &kp RALT
+                                &trans &kp RA(DE_CARET) &kp DE_HASH &kp DE_BSLH &kp SLASH &kp PIPE      &kp C_VOL_UP   &trans   &kp UP   &trans   &trans   &trans
+                                &trans &kp LBKT &kp RBKT &kp LPAR &kp RPAR &kp DE_SQT                   &kp C_PP      &kp LEFT   &kp DOWN   &kp RIGHT   &trans   &trans
+                                &trans &kp DE_LT &kp DE_GT &kp DE_LBRC &kp DE_RBRC &kp DE_DQT           &kp C_VOL_DN  &kp LC(LS(TAB))   &kp LC(TAB) &trans &trans  &trans
+                                                   &trans &trans &trans                                 &trans &trans &trans
                         >;
                 };
         };
