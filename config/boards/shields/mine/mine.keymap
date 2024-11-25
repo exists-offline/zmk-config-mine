@@ -55,7 +55,7 @@
 
 
                         <
-                                &trans &kp RA(DE_CARET) &kp DE_HASH &kp DE_BSLH &kp SLASH &kp PIPE      &kp C_VOL_UP   &trans   &kp UP   &trans   &trans   &DE_SZ
+                                &trans &kp RA(DE_CARET) &kp DE_HASH &kp DE_BSLH &kp SLASH &kp PIPE      &kp C_VOL_UP   &trans   &kp UP   &trans   &trans   &kp DE_SZ
                                 &trans &kp LBKT &kp RBKT &kp LPAR &kp RPAR &kp DE_SQT                   &kp C_PP      &kp LEFT   &kp DOWN   &kp RIGHT   &trans   &trans
                                 &trans &kp DE_LT &kp DE_GT &kp DE_LBRC &kp DE_RBRC &kp DE_DQT           &kp C_VOL_DN  &kp LC(LS(TAB))   &kp LC(TAB) &trans &trans  &trans
                                                    &trans &trans &trans                                 &trans &trans &trans
