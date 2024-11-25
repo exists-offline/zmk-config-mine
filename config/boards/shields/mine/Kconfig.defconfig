@@ -1,6 +1,6 @@
 if SHIELD_MINE_LEFT
 
-config ZMK_MINE
+config ZMK_KEYBOARD_NAME
     default "mine"
 
 config ZMK_SPLIT_ROLE_CENTRAL
