@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include "keys_de.h"
+#include <dt-bindings/zmk/outputs.h>
 
 / {
         keymap {
@@ -19,9 +20,9 @@
                             
                         <
                                 &kp TAB &kp Q   &kp W   &kp DE_E   &kp R   &kp T           &kp DE_Z   &kp U   &kp I   &kp O   &kp P   &kp DE_U_UMLAUT
-                                &kp LSHIFT &kp A  &kp S &kp D   &kp F   &kp G           &kp H      &kp J   &kp K   &kp L   &kp DE_O_UMLAUT   &mt RSHIFT DE_A_UMLAUT
-                                &kp LCTRL &mt LALT DE_Y &kp X &kp C  &kp V   &kp B           &kp N      &kp M   &kp DE_COMMA &kp DE_PERIOD &mt LALT DE_MINUS  &kp RCTRL
-                                                   &kp LGUI &lt 1 RET &kp SPACE           &kp SPACE &lt 2 BSPC &kp RALT
+                                &kp LSHIFT &kp A  &kp S &kp D   &kp F   &kp G              &kp H      &kp J   &kp K   &kp L   &kp DE_O_UMLAUT   &mt RSHIFT DE_A_UMLAUT
+                                &kp LCTRL &mt LALT DE_Y &kp X &kp C  &kp V   &kp B         &kp N      &kp M   &kp DE_COMMA &kp DE_PERIOD &mt LALT DE_MINUS  &kp RCTRL
+                                                   &kp LGUI &lt 1 RET &kp SPACE            &kp SPACE &lt 2 BSPC &kp RALT
                         >;
                 };
 
@@ -48,17 +49,17 @@
                             //  _       ⁓       #       \       /       |               v_up    _       up      _       _       ß
 
                             //  _       [       ]       (       )       '               play    left    down    right   _       _
-                            
-                            //  _       <       >       {       }       "               v_down  p_tab   n_tab   _       _       _
+                        
+                            //  _       <       >       {       }       "               v_down  p_tab   n_tab   _       prefer bt prefer usb
                             
                             //                          _       _       _               _       _       _
 
 
                         <
-                                &trans &kp DE_TILDE &kp DE_HASH &kp DE_BSLH &kp DE_SLASH &kp DE_PIPE      &kp C_VOL_UP   &trans   &kp UP   &trans   &trans   &kp DE_SZ
-                                &trans &kp DE_LBKT &kp DE_RBKT &kp DE_LPAR &kp DE_RPAR &kp DE_SQT                   &kp C_PP      &kp LEFT   &kp DOWN   &kp RIGHT   &trans   &trans
-                                &trans &kp DE_LT &kp DE_GT &kp DE_LBRC &kp DE_RBRC &kp DE_DQT           &kp C_VOL_DN  &kp LC(LS(TAB))   &kp LC(TAB) &trans &trans  &trans
-                                                   &trans &trans &trans                                 &trans &trans &trans
+                                &trans &kp DE_TILDE &kp DE_HASH &kp DE_BSLH &kp DE_SLASH &kp DE_PIPE            &kp C_VOL_UP   &trans   &kp UP   &trans   &trans   &kp DE_SZ
+                                &trans &kp DE_LBKT &kp DE_RBKT &kp DE_LPAR &kp DE_RPAR &kp DE_SQT               &kp C_PP      &kp LEFT   &kp DOWN   &kp RIGHT   &trans   &trans
+                                &trans &kp DE_LT &kp DE_GT &kp DE_LBRC &kp DE_RBRC &kp DE_DQT                   &kp C_VOL_DN  &kp LC(LS(TAB))   &kp LC(TAB) &trans &out OUT_BLE &out OUT_USB
+                                                   &trans &trans &trans                                         &trans &trans &trans
                         >;
                 };
         };
