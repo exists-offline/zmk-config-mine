@@ -18,19 +18,19 @@
                                 timeout-ms = <100>;
                                 key-positions = <38 39>;
                                 bindings = <&kp BSPC>;
-                        }
+                        };
 
                         combo_tggaming {
                                 timeout-ms = <100>;
                                 key-positions = <12 23>;
                                 bindings = <&tog 4>;
-                        }
+                        };
 
                         combo_tgmac {
                                 timeout-ms = <100>;
                                 key-positions = <0 11>;
                                 bindings = <&tog 5>;
-                        }
+                        };
                 };
 
                 behaviors {
