@@ -145,7 +145,7 @@
                         >;
                 };
 
-                default_layer {
+                mac_layer {
                         bindings = 
                             //  tab     Q       W       E       R       T               Z       U       I       O       P       Ü
                             
