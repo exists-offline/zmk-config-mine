@@ -5,54 +5,53 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+        combos {
+                compatible = "zmk,combos";
+                combo_ret {
+                        timeout-ms = <100>;
+                        key-positions = <23 35>;
+                        bindings = <&kp RET>;
+                };
+                
+                combo_bcps {
+                        timeout-ms = <100>;
+                        key-positions = <38 39>;
+                        bindings = <&kp BSPC>;
+                };
+
+                combo_tggaming {
+                        timeout-ms = <100>;
+                        key-positions = <12 23>;
+                        bindings = <&tog 4>;
+                };
+
+                combo_tgmac {
+                        timeout-ms = <100>;
+                        key-positions = <0 11>;
+                        bindings = <&tog 5>;
+                };
+        };
+
+        behaviors {
+                bhm: balanced_homerow_mods {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <0>;
+                        flavor = "balanced";
+                        bindings = <&kp>, <&kp>;
+                };
+        };
+
+        conditional_layers {
+                compatible = "zmk,conditional-layers";
+                tri_layer {
+                        if-layers = <1 2>;
+                        then-layer = <3>;
+                };
+        };
+
         keymap {
-                combos {
-                        compatible = "zmk,combos";
-                        combo_ret {
-                                timeout-ms = <100>;
-                                key-positions = <23 35>;
-                                bindings = <&kp RET>;
-                        };
-                        
-                        combo_bcps {
-                                timeout-ms = <100>;
-                                key-positions = <38 39>;
-                                bindings = <&kp BSPC>;
-                        };
-
-                        combo_tggaming {
-                                timeout-ms = <100>;
-                                key-positions = <12 23>;
-                                bindings = <&tog 4>;
-                        };
-
-                        combo_tgmac {
-                                timeout-ms = <100>;
-                                key-positions = <0 11>;
-                                bindings = <&tog 5>;
-                        };
-                };
-
-                behaviors {
-                        bhm: balanced_homerow_mods {
-                                compatible = "zmk,behavior-hold-tap";
-                                #binding-cells = <2>;
-                                tapping-term-ms = <200>;
-                                quick-tap-ms = <0>;
-                                flavor = "balanced";
-                                bindings = <&kp>, <&kp>;
-                        };
-                };
-
-                conditional_layers {
-                        compatible = "zmk,conditional-layers";
-                        tri_layer {
-                                if-layers = <1 2>;
-                                then-layer = <3>;
-                        };
-                };
-
-
                 compatible = "zmk,keymap";
 
                 default_layer {
