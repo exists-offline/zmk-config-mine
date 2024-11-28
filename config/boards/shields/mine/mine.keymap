@@ -6,61 +6,162 @@
 
 / {
         keymap {
+                combos {
+                        compatible = "zmk,combos";
+                        combo_ret {
+                                timeout-ms = <100>;
+                                key-positions = <23 35>;
+                                bindings = <&kp RET>;
+                        };
+                        
+                        combo_bcps {
+                                timeout-ms = <100>;
+                                key-positions = <38 39>;
+                                bindings = <&kp BSPC>;
+                        }
+
+                        combo_tggaming {
+                                timeout-ms = <100>;
+                                key-positions = <12 23>;
+                                bindings = <&tog 4>;
+                        }
+
+                        combo_tgmac {
+                                timeout-ms = <100>;
+                                key-positions = <0 11>;
+                                bindings = <&tog 5>;
+                        }
+                };
+
+                behaviors {
+                        bhm: balanced_homerow_mods {
+                                compatible = "zmk,behavior-hold-tap";
+                                #binding-cells = <2>;
+                                tapping-term-ms = <200>;
+                                quick-tap-ms = <0>;
+                                flavor = "balanced";
+                                bindings = <&kp>, <&kp>;
+                        };
+                };
+
+                conditional_layers {
+                        compatible = "zmk,conditional-layers";
+                        tri_layer {
+                                if-layers = <1 2>;
+                                then-layer = <3>;
+                        };
+                };
+
+
                 compatible = "zmk,keymap";
 
                 default_layer {
                         bindings = 
                             //  tab     Q       W       E       R       T               Z       U       I       O       P       Ü
                             
-                            //  shift   A       S       D       F       G               H       J       K       L       Ö       Ä(shift)     
+                            //  +       A-ctrl  S-gui   D-alt   F-shift G               H       J-shift  K-alt   L-gui  Ö-ctrl  Ä    
                             
-                            //  ctrl    Y(alt)  X       C       V       B               N       M       ,       .       -(alt)  ctrl
+                            //  ctrl    Y       X       C       V       B               N       M       ,       .       -       ctrl
                             
-                            //                          win     ret(1)  space           space   bspc(2) delete
+                            //                          bspc    spc(1)  spc             spc     spc(2)  bspc  
                             
                         <
                                 &kp TAB &kp Q   &kp W   &kp DE_E   &kp R   &kp T           &kp DE_Z   &kp U   &kp I   &kp O   &kp P   &kp DE_U_UMLAUT
-                                &kp LSHIFT &kp A  &kp S &kp D   &kp F   &kp G              &kp H      &kp J   &kp K   &kp L   &kp DE_O_UMLAUT   &mt RSHIFT DE_A_UMLAUT
-                                &kp LCTRL &mt LALT DE_Y &kp X &kp C  &kp V   &kp B         &kp N      &kp M   &kp DE_COMMA &kp DE_PERIOD &mt LALT DE_MINUS  &kp RCTRL
-                                                   &kp LGUI &lt 1 RET &kp SPACE            &kp SPACE &lt 2 BSPC &kp RALT
+                                &kp DE_PLUS &bhm LCTRL A  &bhm LGUI S &bhm LALT D   &bhm LSHIFT F   &kp G      &kp H      &bhm RSHIFT J   &bhm LALT K   &bhm LGUI L   &bhm RCTRL DE_O_UMLAUT   &kp DE_A_UMLAUT
+                                &kp LCTRL &kp DE_Y &kp X &kp C  &kp V   &kp B         &kp N      &kp M   &kp DE_COMMA &kp DE_PERIOD &kp DE_MINUS  &kp RCTRL
+                                                   &kp BSPC &lt 1 SPACE &kp SPACE            &kp SPACE &lt 2 SPACE &kp BSPC                    
                         >;
                 };
 
                 num_layer {
                         bindings =
-                            //  esc     f1      f2      f3      f4      f5              f6      f7      f8      f9      f10     f11
+                            //  esc     _       1       2       3       %               |       <       >       #       ⁓       !      
                             
-                            //  ^^      1       2       3       4       5               6       7       8       9       0       f12
+                            //  ^^      0       4       5       6       =               '       (       )       [       ]       $       
                             
-                            //  _       _       bt_c    bt_n    bt_p    _               _       +       -       *       /       _
+                            //  _       _       7       8       9       _               "       {       }       /       \       &
                             
-                            //                          _       _       _               _       _       _
+                            //                          _       _       _               _       del     _
 
                         <
-                                &kp ESC &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                          &kp F6     &kp F7  &kp F8   &kp F9  &kp F10  &kp F11
-                                &kp DE_CARET &kp DE_N1  &kp DE_N2 &kp DE_N3 &kp DE_N4 &kp DE_N5         &kp DE_N6 &kp DE_N7 &kp DE_N8 &kp DE_N9 &kp DE_N0 &kp F12
-                                &trans &trans &bt BT_CLR &bt BT_PRV &bt BT_NXT &trans                   &trans &kp DE_PLUS &kp DE_MINUS &kp DE_STAR &kp DE_SLASH  &trans
-                                                   &trans &trans &trans                                 &kp LC(BSPC) &kp DEL &trans
+                                &kp ESC &trans  &kp DE_N1  &kp DE_N2  &kp DE_N3  &trans                 &kp DE_PIPE &kp DE_LT &kp DE_GT &kp DE_HASH  &kp DE_TILDE &trans
+                                &kp DE_CARET &kp DE_N0  &kp DE_N4 &kp DE_N5 &kp DE_N6 &ktrans           &kp DE_SQT &kp DE_LPAR &kp DE_RPAR &kp DE_LBKT &kp DE_RBKT &trans
+                                &trans &trans &kp DE_N7 &kp DE_N8 &kp DE_N9 &trans                      &kp DE_DQT &kp DE_LBRC &kp DE_RBRC &kp DE_SLASH &kp DE_BSLH  &trans
+                                                   &trans &trans &trans                                 &trans &kp DEL &trans
                         >;
                 };
 
                 arrow_layer {
                         bindings =
-                            //  _       ⁓       #       \       /       |               v_up    _       up      _       _       ß
-
-                            //  _       [       ]       (       )       '               play    left    down    right   _       _
+                            //  prebt   _       _       _       _       _               v_up    _       up      _       _       ß
+ 
+                            //  preusb  _       _       _       _       _               play    left    down    right   _       _
                         
-                            //  _       <       >       {       }       "               v_down  p_tab   n_tab   _       prefer bt prefer usb
+                            //  bt c    bt 1    bt 2    bt 3    bt 4    _               v_down  p_tab   n_tab   _       _       _
+                            
+                            //                          _       del     _               _       _       _
+
+                        <
+                                &trans &trans  &trans &trans &trans &trans                                      &kp C_VOL_UP   &trans   &kp UP   &trans   &trans   &kp DE_SZ
+                                &trans &trans  &trans &trans &trans &trans                                      &kp C_PP      &kp LEFT   &kp DOWN   &kp RIGHT   &trans   &trans
+                                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans           &kp C_VOL_DN  &kp LC(LS(TAB)) &kp LC(TAB) &trans &trans &trans
+                                                   &trans &kp DEL &trans                                         &trans &trans &trans
+                        >;
+                };
+
+                fn_layer {
+                        bindings =
+                            //  _       f1      f2      f3      f4      f5              f6      f7      f8      f9      f10     f11
+ 
+                            //  _       _       _       _       _       _               _       _       _       _       _       f12
+                        
+                            //  _       _       _       _       _       _               _       _       _       _       _       _
                             
                             //                          _       _       _               _       _       _
 
-
                         <
-                                &trans &kp DE_TILDE &kp DE_HASH &kp DE_BSLH &kp DE_SLASH &kp DE_PIPE            &kp C_VOL_UP   &trans   &kp UP   &trans   &trans   &kp DE_SZ
-                                &trans &kp DE_LBKT &kp DE_RBKT &kp DE_LPAR &kp DE_RPAR &kp DE_SQT               &kp C_PP      &kp LEFT   &kp DOWN   &kp RIGHT   &trans   &trans
-                                &trans &kp DE_LT &kp DE_GT &kp DE_LBRC &kp DE_RBRC &kp DE_DQT                   &kp C_VOL_DN  &kp LC(LS(TAB))   &kp LC(TAB) &trans &out OUT_BLE &out OUT_USB
-                                                   &trans &trans &trans                                         &trans &trans &trans
+                                &trans &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                          &kp F6     &kp F7  &kp F8   &kp F9  &kp F10  &kp F11
+                                &trans &trans &trans &trans &trans &trans                                       &trans &trans &trans &trans &trans &kp F12
+                                &trans &trans &trans &trans &trans &trans                                       &trans &trans &trans &trans &trans &trans
+                                                     &trans &trans &trans                                       &trans &trans &trans
                         >;
                 };
+
+                gaming_layer {
+                        bindings = 
+                            //  tab     Q       W       E       R       T               Z       U       I       O       P       Ü
+                            
+                            //  shift   A       S       D       F       G               H       J       K       L       Ö       Ä(shift)     
+                            
+                            //  ctrl    Y       X       C       V       B               N       M       ,       .       -       ctrl
+                            
+                            //                          bcsp    spc(1)  spc             spc     spc(2)  bcsp
+                            
+                        <
+                                &kp TAB &kp Q   &kp W   &kp DE_E   &kp R   &kp T           &kp DE_Z   &kp U   &kp I   &kp O   &kp P   &kp DE_U_UMLAUT
+                                &kp LSHIFT &kp A  &kp S &kp D   &kp F   &kp G              &kp H      &kp J   &kp K   &kp L   &kp DE_O_UMLAUT   &mt RSHIFT DE_A_UMLAUT
+                                &kp LCTRL &kp DE_Y &kp X &kp C  &kp V   &kp B              &kp N      &kp M   &kp DE_COMMA &kp DE_PERIOD &kp DE_MINUS  &kp RCTRL
+                                                   &kp BSPC &lt 1 SPACE &kp SPACE          &kp SPACE  &lt 2 SPACE &kp BSPC
+                        >;
+                };
+
+                default_layer {
+                        bindings = 
+                            //  tab     Q       W       E       R       T               Z       U       I       O       P       Ü
+                            
+                            //  +       A-gui   S-ctrl  D-alt   F-shift G               H       J-shift  K-alt   L-ctrl Ö-gui   Ä    
+                            
+                            //  ctrl    Y       X       C       V       B               N       M       ,       .       -       ctrl
+                            
+                            //                          bspc    spc(1)  spc             spc     spc(2)  bspc  
+                            
+                        <
+                                &kp TAB &kp Q   &kp W   &kp DE_E   &kp R   &kp T           &kp DE_Z   &kp U   &kp I   &kp O   &kp P   &kp DE_U_UMLAUT
+                                &kp DE_PLUS &bhm LCTRL A  &bhm LGUI S &bhm LALT D          &bhm LSHIFT F   &kp G      &kp H      &bhm RSHIFT J   &bhm LALT K   &bhm LGUI L   &bhm RCTRL DE_O_UMLAUT   &kp DE_A_UMLAUT
+                                &kp LCTRL &kp DE_Y &kp X &kp C  &kp V   &kp B              &kp N  &kp M   &kp DE_COMMA &kp DE_PERIOD &kp DE_MINUS  &kp RCTRL
+                                                   &kp BSPC &lt 1 SPACE &kp SPACE          &kp SPACE &lt 2 SPACE &kp BSPC                    
+                        >;
+                };
+                
         };
 };
