@@ -26,7 +26,7 @@
                 };
 
                 combo_tgmac {
-                        timeout-ms = <100>;
+                        timeout-ms = <100>;  
                         key-positions = <0 11>;
                         bindings = <&tog 5>;
                 };
@@ -83,9 +83,9 @@
                             //                          _       _       _               _       del     _
 
                         <
-                                &kp ESC &trans  &kp DE_N1  &kp DE_N2  &kp DE_N3  &trans                 &kp DE_PIPE &kp DE_LT &kp DE_GT &kp DE_HASH  &kp DE_TILDE &trans
-                                &kp DE_CARET &kp DE_N0  &kp DE_N4 &kp DE_N5 &kp DE_N6 &trans           &kp DE_SQT &kp DE_LPAR &kp DE_RPAR &kp DE_LBKT &kp DE_RBKT &trans
-                                &trans &trans &kp DE_N7 &kp DE_N8 &kp DE_N9 &trans                      &kp DE_DQT &kp DE_LBRC &kp DE_RBRC &kp DE_SLASH &kp DE_BSLH  &trans
+                                &kp ESC &trans  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_PERCENT         &kp DE_PIPE &kp DE_LT &kp DE_GT &kp DE_HASH  &kp DE_TILDE &kp DE_EXCLAMATION
+                                &kp DE_CARET &kp DE_N0  &kp DE_N4 &kp DE_N5 &kp DE_N6 &kp DE_EQUAL      &kp DE_SQT &kp DE_LPAR &kp DE_RPAR &kp DE_LBKT &kp DE_RBKT &kp DE_DOLLAR
+                                &trans &trans &kp DE_N7 &kp DE_N8 &kp DE_N9 &trans                      &kp DE_DQT &kp DE_LBRC &kp DE_RBRC &kp DE_SLASH &kp DE_BSLH  &kp DE_AMPERSAND
                                                    &trans &trans &trans                                 &trans &kp DEL &trans
                         >;
                 };
