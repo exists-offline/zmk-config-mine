@@ -132,15 +132,15 @@
                             
                             //  shift   A       S       D       F       G               H       J       K       L       Ö       Ä(shift)     
                             
-                            //  ctrl    Y       X       C       V       B               N       M       ,       .       -       ctrl
+                            //  ctrl    Y       X       C       V       B               N       M       ,       .       -       esc
                             
                             //                          bcsp    spc(1)  spc             spc     spc(2)  bcsp
                             
                         <
                                 &kp TAB &kp Q   &kp W   &kp DE_E   &kp R   &kp T           &kp DE_Z   &kp U   &kp I   &kp O   &kp P   &kp DE_U_UMLAUT
                                 &kp LSHIFT &kp A  &kp S &kp D   &kp F   &kp G              &kp H      &kp J   &kp K   &kp L   &kp DE_O_UMLAUT   &mt RSHIFT DE_A_UMLAUT
-                                &kp LCTRL &kp DE_Y &kp X &kp C  &kp V   &kp B              &kp N      &kp M   &kp DE_COMMA &kp DE_PERIOD &kp DE_MINUS  &kp RCTRL
-                                                   &kp BSPC &lt 1 SPACE &kp SPACE          &kp SPACE  &lt 2 SPACE &kp BSPC
+                                &kp LCTRL &kp DE_Y &kp X &kp C  &kp V   &kp B              &kp N      &kp M   &kp DE_COMMA &kp DE_PERIOD &kp DE_MINUS  &kp ESC
+                                                   &kp BSPC &lt -3 SPACE &kp SPACE          &kp SPACE  &lt -2 SPACE &kp BSPC
                         >;
                 };
 
