@@ -22,13 +22,13 @@
                 combo_tggaming {
                         timeout-ms = <100>;
                         key-positions = <12 23>;
-                        bindings = <&tog 4>;
+                        bindings = <&tog 1>;
                 };
 
                 combo_tgmac {
                         timeout-ms = <100>;  
                         key-positions = <0 11>;
-                        bindings = <&tog 5>;
+                        bindings = <&tog 2>;
                 };
         };
 
@@ -46,8 +46,8 @@
         conditional_layers {
                 compatible = "zmk,conditional-layers";
                 tri_layer {
-                        if-layers = <1 2>;
-                        then-layer = <3>;
+                        if-layers = <3 4>;
+                        then-layer = <5>;
                 };
         };
 
@@ -69,60 +69,6 @@
                                 &kp DE_PLUS &bhm LCTRL A  &bhm LGUI S &bhm LALT D   &bhm LSHIFT F   &kp G      &kp H      &bhm RSHIFT J   &bhm LALT K   &bhm LGUI L   &bhm RCTRL DE_O_UMLAUT   &kp DE_A_UMLAUT
                                 &kp LCTRL &kp DE_Y &kp X &kp C  &kp V   &kp B         &kp N      &kp M   &kp DE_COMMA &kp DE_PERIOD &kp DE_MINUS  &kp RCTRL
                                                    &kp BSPC &lt 3 SPACE &kp SPACE            &kp SPACE &lt 4 SPACE &kp BSPC                    
-                        >;
-                };
-
-                num_layer {
-                        bindings =
-                            //  esc     _       1       2       3       %               |       <       >       #       ⁓       !      
-                            
-                            //  ^^      0       4       5       6       =               '       (       )       [       ]       $       
-                            
-                            //  _       _       7       8       9       _               "       {       }       /       \       &
-                            
-                            //                          _       _       _               _       del     _
-
-                        <
-                                &kp ESC &trans  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_PERCENT         &kp DE_PIPE &kp DE_LT &kp DE_GT &kp DE_HASH  &kp DE_TILDE &kp DE_EXCLAMATION
-                                &kp DE_CARET &kp DE_N0  &kp DE_N4 &kp DE_N5 &kp DE_N6 &kp DE_EQUAL      &kp DE_SQT &kp DE_LPAR &kp DE_RPAR &kp DE_LBKT &kp DE_RBKT &kp DE_DOLLAR
-                                &trans &trans &kp DE_N7 &kp DE_N8 &kp DE_N9 &trans                      &kp DE_DQT &kp DE_LBRC &kp DE_RBRC &kp DE_SLASH &kp DE_BSLH  &kp DE_AMPERSAND
-                                                   &trans &trans &trans                                 &kp DEL &trans &trans
-                        >;
-                };
-
-                arrow_layer {
-                        bindings =
-                            //  prebt   _       _       _       _       _               v_up    _       up      _       _       ß
- 
-                            //  preusb  _       _       _       _       _               play    left    down    right   _       _
-                        
-                            //  bt c    bt 1    bt 2    bt 3    bt 4    _               v_down  p_tab   n_tab   _       _       _
-                            
-                            //                          _       del     _               _       _       _
-
-                        <
-                                &trans &trans  &trans &trans &trans &trans                                      &kp C_VOL_UP   &trans   &kp UP   &trans   &trans   &kp DE_SZ
-                                &trans &trans  &trans &trans &trans &trans                                      &kp C_PP      &kp LEFT   &kp DOWN   &kp RIGHT   &trans   &trans
-                                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans           &kp C_VOL_DN  &kp LC(LS(TAB)) &kp LC(TAB) &trans &trans &trans
-                                                   &trans &trans &kp DEL                                          &trans &trans &trans
-                        >;
-                };
-
-                fn_layer {
-                        bindings =
-                            //  _       f1      f2      f3      f4      f5              f6      f7      f8      f9      f10     f11
- 
-                            //  _       _       _       _       _       _               _       _       _       _       _       f12
-                        
-                            //  _       _       _       _       _       _               _       _       _       _       _       _
-                            
-                            //                          _       _       _               _       _       _
-
-                        <
-                                &trans &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                          &kp F6     &kp F7  &kp F8   &kp F9  &kp F10  &kp F11
-                                &trans &trans &trans &trans &trans &trans                                       &trans &trans &trans &trans &trans &kp F12
-                                &trans &trans &trans &trans &trans &trans                                       &trans &trans &trans &trans &trans &trans
-                                                     &trans &trans &trans                                       &trans &trans &trans
                         >;
                 };
 
@@ -161,6 +107,59 @@
                                                    &kp BSPC &lt 3 SPACE &kp SPACE          &kp SPACE &lt 4 SPACE &kp BSPC                    
                         >;
                 };
-                
+
+                num_layer {
+                        bindings =
+                            //  esc     _       1       2       3       %               |       <       >       #       ⁓       !      
+                            
+                            //  ^^      0       4       5       6       =               '       (       )       [       ]       $       
+                            
+                            //  _       _       7       8       9       _               "       {       }       /       \       &
+                            
+                            //                          _       _       _               del     _       _
+
+                        <
+                                &kp ESC &trans  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_PERCENT         &kp DE_PIPE &kp DE_LT &kp DE_GT &kp DE_HASH  &kp DE_TILDE &kp DE_EXCLAMATION
+                                &kp DE_CARET &kp DE_N0  &kp DE_N4 &kp DE_N5 &kp DE_N6 &kp DE_EQUAL      &kp DE_SQT &kp DE_LPAR &kp DE_RPAR &kp DE_LBKT &kp DE_RBKT &kp DE_DOLLAR
+                                &trans &trans &kp DE_N7 &kp DE_N8 &kp DE_N9 &trans                      &kp DE_DQT &kp DE_LBRC &kp DE_RBRC &kp DE_SLASH &kp DE_BSLH  &kp DE_AMPERSAND
+                                                   &trans &trans &trans                                 &kp DEL &trans &trans
+                        >;
+                };
+
+                arrow_layer {
+                        bindings =
+                            //  prebt   _       _       _       _       _               v_up    _       up      _       _       ß
+ 
+                            //  preusb  _       _       _       _       _               play    left    down    right   _       _
+                        
+                            //  bt c    bt 1    bt 2    bt 3    bt 4    _               v_down  p_tab   n_tab   _       _       _
+                            
+                            //                          _       _       del             _       _       _
+
+                        <
+                                &trans &trans  &trans &trans &trans &trans                                      &kp C_VOL_UP   &trans   &kp UP   &trans   &trans   &kp DE_SZ
+                                &trans &trans  &trans &trans &trans &trans                                      &kp C_PP      &kp LEFT   &kp DOWN   &kp RIGHT   &trans   &trans
+                                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans           &kp C_VOL_DN  &kp LC(LS(TAB)) &kp LC(TAB) &trans &trans &trans
+                                                   &trans &trans &kp DEL                                          &trans &trans &trans
+                        >;
+                };
+
+                fn_layer {
+                        bindings =
+                            //  _       f1      f2      f3      f4      f5              f6      f7      f8      f9      f10     f11
+ 
+                            //  _       _       _       _       _       _               _       _       _       _       _       f12
+                        
+                            //  _       _       _       _       _       _               _       _       _       _       _       _
+                            
+                            //                          _       _       _               _       _       _
+
+                        <
+                                &trans &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                          &kp F6     &kp F7  &kp F8   &kp F9  &kp F10  &kp F11
+                                &trans &trans &trans &trans &trans &trans                                       &trans &trans &trans &trans &trans &kp F12
+                                &trans &trans &trans &trans &trans &trans                                       &trans &trans &trans &trans &trans &trans
+                                                     &trans &trans &trans                                       &trans &trans &trans
+                        >;
+                };
         };
 };
